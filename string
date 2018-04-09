@@ -1,1 +1,96 @@
 
+******************* Longest Common Prefix *******************
+
+string longestCommonPrefix(vector<string> & strs){
+    string str1 =strs[0];
+    for(int i =0; i< strs.size(); i++){
+        string str2 =strs[i];
+        int j = 0;
+        while(str1[j]==str2[j]) j++;
+        str1 = str1.substr(0,j);   
+    }
+  }
+  
+  ******************* Implement strStr() *******************
+  /* find the same pattern */
+  
+  int strStr(string haystack, string needle) {
+      int n =haystack.length();
+      int m =needle.length();
+      
+  for(int i =0; i< n-m+1; i++)
+  {
+  int j=0;                       // 每次從0開始找
+  if(;j< m; j++){
+    if(haystack[j] != needle[j])
+      break;
+    }
+    if(j==m) return i;          //如果找到長度相同的return position
+  }
+  
+  return -1;
+  }
+  
+  ******************* string to interger *******************
+  
+  int myAtoi(string str){
+          long str_int =0;
+          int sign =1, i =0;               
+  
+       while(i< str.size())
+       {
+         if(str[i] =='+' ||str[i] =='-' )
+          {
+          sign =(str[i] =='-') ? -1: 1;
+          i++;                                 // 往正負號下一個數字判斷
+          } 
+          while(str[i] >='0'&& str[i] <='9'){
+          str_int = str_int*10 + (str[i] -'0');
+          }
+       
+       }  
+     return str_int*sign;
+  }
+  
+  ******************* Palindrome(回文) *******************
+  
+  bool isPalindrome(string s){
+  
+  string str =lowercase(s);
+  int end = str.size()-1; 
+  int start =0;
+  
+  while(start <= end){
+  
+    if(str[end]!= str[start])
+        retrun false;
+     start++;
+     end--;
+  
+  }
+   return true;
+ 
+  }
+  ******************* Valid Anagram(判斷字串是否一樣) *******************
+  
+  bool isAnagram(string s , string t){
+       if(s.length()!=t.length())
+         return false;
+         
+       map<char, int> m; 
+       for(auto & str: s)
+          m[str]++;
+          
+       for(auto & str: t)
+          m[str]--;
+  
+       for(auto & str: t){
+          if(m[str]!=0){
+             return false;
+          }
+       }
+           
+      return true;
+ 
+  }
+  
