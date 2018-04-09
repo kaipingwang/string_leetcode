@@ -94,3 +94,16 @@ string longestCommonPrefix(vector<string> & strs){
  
   }
   
+  ******************* string reverse (判斷字串是否一樣) *******************
+  
+  string reverseString(string s ){
+     int first =0, end = s.length()-1;
+     while(first <= end){
+            swap(s[start], s[end]);
+            first++;
+            end--;
+     
+     
+     
+     }
+  }
