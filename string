@@ -94,16 +94,32 @@ string longestCommonPrefix(vector<string> & strs){
  
   }
   
-  ******************* string reverse (判斷字串是否一樣) *******************
+  ******************* string reverse *******************
   
   string reverseString(string s ){
      int first =0, end = s.length()-1;
      while(first <= end){
             swap(s[start], s[end]);
             first++;
-            end--;
-     
-     
-     
+            end--; 
      }
+     retrun s;
   }
+
+  ******************* string Parenthesis *******************
+  
+   vector<string> generateParenthesis(int n) {
+         vector<string> res;
+         addingpar(res,"",  n, m)                 // n 左邊括弧  m 右邊括弧
+         return res;
+   }
+   
+   void addingpar(vector<string>& res ,string str, int n , int m ){
+        if(m> 0) addingpar(res, str+")", n , m-1);
+        if(n> 0) addingpar(res, str+"(", n-1 , m + 1);
+   
+   }
+ 
+   }
+   
+ 
